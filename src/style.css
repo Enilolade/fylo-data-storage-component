@@ -1,0 +1,17 @@
+.desktop-bg {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    background-color: hsl(229, 57%, 11%);
+  }
+
+  .mobile-bg {
+    display: none;
+  }
+
+  .desktop-bg {
+    display: block;
+  }
+}

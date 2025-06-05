@@ -168,11 +168,17 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
   .relative {
     position: relative;
   }
-  .static {
-    position: static;
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
+  .-z-1 {
+    z-index: calc(1 * -1);
   }
   .z-10 {
     z-index: 10;
@@ -185,6 +191,9 @@
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
+  }
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
   }
   .ml-3\.5 {
     margin-left: calc(var(--spacing) * 3.5);
@@ -210,8 +219,14 @@
   .h-full {
     height: 100%;
   }
+  .w-3 {
+    width: calc(var(--spacing) * 3);
+  }
   .w-3\/4 {
     width: calc(3/4 * 100%);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
   .w-4\/5 {
     width: calc(4/5 * 100%);
@@ -225,8 +240,17 @@
   .flex-\[1_0_auto\] {
     flex: 1 0 auto;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .shrink-0 {
     flex-shrink: 0;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -261,6 +285,10 @@
   .rounded-tr-\[5rem\] {
     border-top-right-radius: 5rem;
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .bg-blue-950 {
     background-color: var(--color-blue-950);
   }
@@ -282,14 +310,8 @@
     --tw-gradient-to: hsl(335,100%,65%);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
-  .bg-cover {
-    background-size: cover;
-  }
-  .bg-center {
-    background-position: center;
-  }
-  .bg-no-repeat {
-    background-repeat: no-repeat;
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
@@ -299,6 +321,9 @@
   }
   .p-\[1rem\] {
     padding: 1rem;
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-2\.5 {
     padding-block: calc(var(--spacing) * 2.5);
@@ -323,6 +348,9 @@
   }
   .text-blue-900 {
     color: var(--color-blue-900);
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -444,6 +472,11 @@ section {
   font-size: 11px;
   text-align: center;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-gradient-position {
   syntax: "*";
   inherits: false;
@@ -498,6 +531,7 @@ section {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
       --tw-gradient-via: #0000;

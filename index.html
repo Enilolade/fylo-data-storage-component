@@ -29,14 +29,25 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="./src/style.css" />
+
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body
-    class="h-full flex flex-col text-[14px] bg-[url('/images/bg-mobile.png')] lg:bg-[url('/images/bg-desktop.png')] bg-cover bg-center bg-no-repeat"
-  >
+  <body class="h-full flex flex-col text-[14px]">
     <main class="flex-[1_0_auto] relative">
+      <img
+        src="./images/bg-mobile.png"
+        alt="background image"
+        class="mobile-bg absolute h-full w-full"
+      />
+      <img
+        src="./images/bg-desktop.png"
+        alt="background image"
+        class="desktop-bg absolute bottom-0"
+      />
+
       <div
-        class="content h-full flex flex-col gap-3 items-center mt-[1rem] md:w-4/5 md:flex-row md:gap-8 md:mx-auto md:my-0"
+        class="content h-full flex flex-col gap-3 items-center mt-[1rem] md:w-4/5 md:flex-row md:gap-8 md:mx-auto md:my-0 relative"
       >
         <section
           class="logo-file-type flex flex-col justify-center w-4/5 rounded-lg rounded-tr-[5rem] p-5 gap-8 md:w-3/5 lg:w-2/5"
